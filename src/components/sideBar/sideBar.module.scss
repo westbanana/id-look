@@ -11,8 +11,6 @@
 
 .logo{
   margin: 34px 23px;
-  width: 40px;
-  height: 35px;
 }
 
 .fullSideBar{
@@ -44,10 +42,6 @@
   margin: auto;
 }
 
-.theme_swiper{
-
-}
-
 .opened{
   width: 238px;
 }
@@ -72,17 +66,26 @@
   }
 
   .theme_swiper{
-    margin: 13px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     order: -1;
+    margin: 3px 0 0 30px ;
   }
 
   .logo{
     order: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 10px;
   }
 
   .burger{
-    display: block;
-    margin: 19px 30px;
+    display: flex;
+    align-items: center;
     order: 0;
+    justify-content: center;
+    margin: 0 30px 0 0;
   }
 }

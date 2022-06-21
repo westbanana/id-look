@@ -12,3 +12,15 @@
           rgba(22, 34, 42, 0.18) 0%,
           rgba(58, 96, 115, 0.51) 100%);
 }
+
+
+@media (max-width: 900px){
+  .gradient_container{
+    height: 100vh;
+    width: 100%;
+    background:
+            radial-gradient(99.39% 50.65% at 50% 50%,
+            rgba(22, 34, 42, 0.18) 0%,
+            rgba(58, 96, 115, 0.51) 100%);
+  }
+}
