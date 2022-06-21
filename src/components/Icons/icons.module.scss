@@ -1,0 +1,35 @@
+@mixin iconFont {
+  width: 75px;
+  height: 23px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #436E85;
+  cursor: pointer;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.description{
+  display: none;
+  @include iconFont;
+}
+
+.showed_descripiton{
+  display: block;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.showedIcon{
+  margin-right: 6px;
+}
