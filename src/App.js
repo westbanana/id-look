@@ -18,8 +18,6 @@ function App() {
       });
   }
 
-  console.log(movieList.map((e) => e.title))
-
   useEffect(() => {
     getMovieList()
   }, [])
