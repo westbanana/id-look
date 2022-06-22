@@ -26,9 +26,9 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: #223743;
     margin-bottom: 24px;
     overflow: hidden;
+    user-select: none;
     img{
       height: 100%;
       width: 100%;
