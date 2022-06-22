@@ -48,6 +48,11 @@
 
 .burger{
   display: none;
+  cursor: pointer;
+}
+
+.rotateburger{
+  transform: rotate(180deg);
 }
 
 @media (max-width: 900px) {

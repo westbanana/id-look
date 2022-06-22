@@ -13,8 +13,8 @@ const Logo = () => {
             <path d="M36.9453 22.575C38.6324 22.575 40 23.907 40 25.55V32.025C40 33.668 38.6324 35 36.9453 35H20.5938C18.9067 35 17.5391 33.668 17.5391 32.025V25.55C17.5391 23.907 18.9067 22.575 20.5938 22.575H36.9453Z" fill="#436E85"/>
           </g>
           <defs>
-            <filter id="filter0_i_51_223" x="-1" y="0" width="41" height="36" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <filter id="filter0_i_51_223" x="-1" y="0" width="41" height="36" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-1" dy="1"/>

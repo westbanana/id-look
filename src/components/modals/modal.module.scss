@@ -1,61 +1,80 @@
-.container{
-  background-color: rgba(0, 0, 0, 0.24);
-  position: absolute;
-  top: 52px;
-  width: 100%;
-  height: 100vh;
-  animation: openAnimBg 0.3s linear forwards;
-}
-
-.modal{
-  width: 100%;
-  background: linear-gradient(270deg, #1D2F39 1.99%, #325364 130.97%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 46px;
-  animation: openAnim 0.3s linear forwards;
-}
-
-.button{
-  width: 371px;
-  height: 50px;
-  border: 1px solid #436E85;
-  border-radius: 9px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 32px;
-  cursor: pointer;
-}
-
-.button_description{
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  color: #436E85;
-}
-
-@keyframes openAnim {
-  from{
+@media (max-width: 900px) {
+  .container{
+    background-color: rgba(0, 0, 0, 0.24);
     position: absolute;
-    right: -50%;
-  }
-  to{
-    right: 50%;
-    position: static;
-  }
-}
-
-@keyframes openAnimBg {
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
+    top: 52px;
+    width: 100%;
+    height: 100vh;
+    animation: openAnimBg 0.3s linear forwards;
   }
 
+  .modal{
+    width: 100%;
+    background: linear-gradient(270deg, #1D2F39 1.99%, #325364 130.97%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 46px;
+    animation: openAnim 0.3s linear forwards;
+  }
+
+  .button{
+    width: 371px;
+    height: 50px;
+    border: 1px solid #436E85;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    cursor: pointer;
+  }
+
+  .button_description{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #436E85;
+    text-decoration: none;
+  }
+
+  .closedModal{
+    animation: closedModal 0.3s linear forwards;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  @keyframes openAnim {
+    from{
+      position: absolute;
+      top: -50%;
+    }
+    to{
+      top: 50%;
+      position: static;
+    }
+  }
+
+  @keyframes openAnimBg {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  @keyframes closedModal {
+    from{
+      top: 50%;
+    }
+    to{
+      top: -50%
+    }
+  }
 }
