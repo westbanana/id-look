@@ -1,15 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "../../screens/profileScreen/profile.module.scss";
 
 const Avatar = ({ link, changeAvatar, id}) => {
+//State with gradient value
   const [renderedGrad, setRenderedGrad] = useState(``)
+//State with random number for get random characters
   const [number, setNumber] = useState(0);
+
+//String with value for set color
   const hexString = "0123456789abcdef";
 
+//Get random number from 0 to 3
   const getRandomArbitrary = (min, max) => {
     setNumber(parseInt(Math.random() * (max - min) + min));
   }
 
+//Function which generate random color
   const randomColor = () => {
     let hexCode = '#';
     for( let i = 0; i < 6; i++){
@@ -18,6 +24,7 @@ const Avatar = ({ link, changeAvatar, id}) => {
     return hexCode;
   }
 
+//Function wich generate random gradient from 3 colors
   const generateGrad = () => {
     let colorOne = randomColor();
     let colorTwo = randomColor();
@@ -26,7 +33,14 @@ const Avatar = ({ link, changeAvatar, id}) => {
     return `linear-gradient(${angle}deg, ${colorOne}, ${colorTwo}, ${colorThree})`
   }
 
+//Set random gradient when site open
+  useEffect(() => {
+    setRenderedGrad(
+      generateGrad()
+    )
+  }, [])
 
+//Function which change avatar and bg when you click on it
   const getNewImage = () => {
     changeAvatar();
     getRandomArbitrary(0, 4)

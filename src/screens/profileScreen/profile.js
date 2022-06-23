@@ -4,19 +4,21 @@ import logo from "../../components/logo/logo";
 import Avatar from "../../components/Avatar";
 
 const Profile = () => {
+//State with random id for received image
   const [imageId, setImageId] = useState('')
-  const [userName, setUserName] = useState('')
-  const [userEmail, setuserEmail] = useState('')
-  const [userSecondName, setuserSecondName] = useState('')
+
+//State with user information name, surname, email, avatar
   const [userInfo, setUserInfo] = useState({
     firstName: 'Alexandr',
-    secondName: 'Foo',
+    surname: 'Foo',
     email: 'westbanana4@gmail.com',
     image: `https://robohash.org/${imageId}`,
   })
-  const [userData, setUserData] = useState({})
-  const {firstName: firstName, secondName: secondName, email: email, image: image} = userInfo;
 
+//Destruction object userInfo
+  const {firstName: firstName, surname:surName ,email: email, image: image} = userInfo;
+
+//Function which generate random id for image
   const makeId = (length) => {
     let result           = '';
     let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -27,15 +29,23 @@ const Profile = () => {
     }
     return result;
   }
+
+//Function which generate random id for image and this value push in imageId, when was site open
   useEffect(() => {
     setImageId(
       makeId(10)
     );
   }, []);
 
+
+  const [newUserInfo, setNewUserInfo] = useState({
+    name: '',
+    surname: '',
+    email: '',
+  })
+
   const changeUserData = (e) => {
     e.preventDefault();
-    console.log(userName);
   }
 
   return (
@@ -44,23 +54,23 @@ const Profile = () => {
         <div className={s.info_container}>
           <Avatar id={imageId} link={image} changeAvatar={() => setImageId(makeId(10))}/>
           <div className={s.userName}>
-            {userName && userSecondName ? `${userName} ${userSecondName}` : `${firstName} ${secondName}`}
+            <span>{firstName} {surName}</span>
           </div>
             <form>
               <div className={s.inputContainer}>
                 <span>Ім'я</span>
                 <input
-                  onChange={(e) => setUserName(e.target.value)}
                   type='name'
                   placeholder={firstName}
+                  onChange={(e) => newUserInfo.name = e.target.value}
                 />
               </div>
               <div className={s.inputContainer}>
                 <span>Прізвище</span>
                 <input
                   type='second-name'
-                  placeholder={secondName}
-                  onChange={(e) => setuserSecondName(e.target.value)}
+                  placeholder={surName}
+                  onChange={(e) => newUserInfo.surname = e.target.value}
                 />
               </div>
               <div className={s.inputContainer}>
@@ -68,7 +78,7 @@ const Profile = () => {
                 <input
                   type='email'
                   placeholder={email}
-                  onChange={(e) => setuserEmail(e.target.value)}
+                  onChange={(e) => newUserInfo.email = e.target.value}
                 />
               </div>
               <button type='submit' onClick={changeUserData}>Зберегти</button>
