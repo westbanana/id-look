@@ -5,10 +5,13 @@ import Avatar from "../../components/Avatar";
 
 const Profile = () => {
   const [imageId, setImageId] = useState('')
+  const [userName, setUserName] = useState('')
+  const [userEmail, setuserEmail] = useState('')
+  const [userSecondName, setuserSecondName] = useState('')
   const [userInfo, setUserInfo] = useState({
     firstName: 'Alexandr',
     secondName: 'Foo',
-    email: 'qweqwewqeq',
+    email: 'westbanana4@gmail.com',
     image: `https://robohash.org/${imageId}`,
   })
   const [userData, setUserData] = useState({})
@@ -30,28 +33,45 @@ const Profile = () => {
     );
   }, []);
 
+  const changeUserData = (e) => {
+    e.preventDefault();
+    console.log(userName);
+  }
+
   return (
     <div className={s.main_container}>
       <div className={s.gradient_container}>
         <div className={s.info_container}>
           <Avatar id={imageId} link={image} changeAvatar={() => setImageId(makeId(10))}/>
           <div className={s.userName}>
-            {`${firstName} ${secondName}`}
+            {userName && userSecondName ? `${userName} ${userSecondName}` : `${firstName} ${secondName}`}
           </div>
             <form>
               <div className={s.inputContainer}>
                 <span>Ім'я</span>
-                <input type='name' placeholder={firstName}></input>
+                <input
+                  onChange={(e) => setUserName(e.target.value)}
+                  type='name'
+                  placeholder={firstName}
+                />
               </div>
               <div className={s.inputContainer}>
                 <span>Прізвище</span>
-                <input type='secon-name' placeholder={secondName}></input>
+                <input
+                  type='second-name'
+                  placeholder={secondName}
+                  onChange={(e) => setuserSecondName(e.target.value)}
+                />
               </div>
               <div className={s.inputContainer}>
                 <span>Email</span>
-                <input type='email' placeholder={email}></input>
+                <input
+                  type='email'
+                  placeholder={email}
+                  onChange={(e) => setuserEmail(e.target.value)}
+                />
               </div>
-              <button>Зберегти</button>
+              <button type='submit' onClick={changeUserData}>Зберегти</button>
             </form>
         </div>
       </div>

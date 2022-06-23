@@ -10,8 +10,6 @@ const Avatar = ({ link, changeAvatar, id}) => {
     setNumber(parseInt(Math.random() * (max - min) + min));
   }
 
-  console.log(number)
-
   const randomColor = () => {
     let hexCode = '#';
     for( let i = 0; i < 6; i++){
@@ -52,19 +50,3 @@ const Avatar = ({ link, changeAvatar, id}) => {
 };
 
 export default Avatar;
-
-/*
-* linear-gradient: ({deg}, {firtsColor}, {secondColor}, {thirdColor}
-* [first, second, third]
-* for(let i = 0; i <= arr.length; i++){
-*background: linear-gradient(
-    from 0 to 360deg
-    rgba( 10, 20, 30, 0,1) max 255,
-    rgba( 10, 20, 30, 0,1) max 255,
-    rgba( 10, 20, 30, 0,1) max 255
-  );
-*
-* style={{backgroundImage: `linear-gradient(${colors[0]}, rgba${}, rgba${}, rgba${},)`}}
-*
-* }
-* */
