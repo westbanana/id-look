@@ -34,23 +34,23 @@ const Avatar = ({ link, changeAvatar, id}) => {
   }
 
 //Set random gradient when site open
-  useEffect(() => {
-    setRenderedGrad(
-      generateGrad()
-    )
-  }, [])
+//   useEffect(() => {
+//     setRenderedGrad(
+//       generateGrad()
+//     )
+//   }, [])
 
 //Function which change avatar and bg when you click on it
   const getNewImage = () => {
     changeAvatar();
     getRandomArbitrary(0, 4)
-    setRenderedGrad(
-      generateGrad()
-    )
+    // setRenderedGrad(
+    //   generateGrad()
+    // )
   }
 
   return (
-    <div className={s.userAvatar} style={{background: `${renderedGrad}`}}>
+    <div className={s.userAvatar}>
       <div className={s.changeAvatarContainer}>
         <div className={s.refreshContainer} onClick={() => getNewImage()}>
           <svg width="30" height="30" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +58,7 @@ const Avatar = ({ link, changeAvatar, id}) => {
           </svg>
         </div>
       </div>
-      <img src={`https://robohash.org/${id}?set=set${number}`}/>
+      <img id={s.profileAvatar} src={`https://robohash.org/${id}?set=set${number}`}/>
     </div>
   );
 };

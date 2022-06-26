@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import s from './profile.module.scss';
-import logo from "../../components/logo/logo";
 import Avatar from "../../components/Avatar";
 
 const Profile = () => {
@@ -37,17 +36,6 @@ const Profile = () => {
     );
   }, []);
 
-
-  const [newUserInfo, setNewUserInfo] = useState({
-    name: '',
-    surname: '',
-    email: '',
-  })
-
-  const changeUserData = (e) => {
-    e.preventDefault();
-  }
-
   return (
     <div className={s.main_container}>
       <div className={s.gradient_container}>
@@ -62,7 +50,6 @@ const Profile = () => {
                 <input
                   type='name'
                   placeholder={firstName}
-                  onChange={(e) => newUserInfo.name = e.target.value}
                 />
               </div>
               <div className={s.inputContainer}>
@@ -70,7 +57,6 @@ const Profile = () => {
                 <input
                   type='second-name'
                   placeholder={surName}
-                  onChange={(e) => newUserInfo.surname = e.target.value}
                 />
               </div>
               <div className={s.inputContainer}>
@@ -78,10 +64,11 @@ const Profile = () => {
                 <input
                   type='email'
                   placeholder={email}
-                  onChange={(e) => newUserInfo.email = e.target.value}
                 />
               </div>
-              <button type='submit' onClick={changeUserData}>Зберегти</button>
+              <button type='submit'>
+                Зберегти
+              </button>
             </form>
         </div>
       </div>
