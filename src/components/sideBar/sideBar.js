@@ -6,17 +6,19 @@ import ProfileIco from "../Icons/profileIco";
 import ThemeSwiper from "../themeSwiper/themeSwiper";
 import Modal from "../modals/modal";
 
-const SideBar = () => {
+const SideBar = ({ getModalState }) => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
 
   const changeSideBar = () => {
-    setIsSideBarOpen(!isSideBarOpen)
+    setIsSideBarOpen(!isSideBarOpen);
+    getModalState(isSideBarOpen);
   }
 
   const openBurger = () => {
     setIsModalActive(!isModalActive)
   };
+
 
   return (
     <div className={`${s.main_container} ${isSideBarOpen ? s.opened : ''}`}>

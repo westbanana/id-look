@@ -2,17 +2,16 @@ import React, {useState} from 'react';
 import s from './mainScreen.module.scss';
 import SearchField from "../../components/SearchField";
 
-const MainScreen = ({ movieList }) => {
+const MainScreen = ({ movieList, isSideBarOpen }) => {
   const [isSort, setIsSort] = useState(false);
 
   const changeSort = () =>{
     setIsSort(!isSort);
   }
 
-  console.log(isSort)
   return (
     <div className={s.main_container}>
-      <div className={s.gradient_container}>
+      <div className={`${isSideBarOpen ? s.gradient_container : s.open}`}>
           <div className={s.containerSearch}>
             <span className={s.newsMobile}>Новини</span>
             <SearchField/>

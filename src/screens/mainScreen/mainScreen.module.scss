@@ -1,7 +1,23 @@
 .main_container{
   height: 100vh;
   width: 100%;
+  //width: 922px;
+  //position: absolute;
   background-color: rgba(22, 34, 42, 1);
+  //left: 238px;
+}
+
+.open{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 238px;
+  background:
+          radial-gradient(51.39% 74.65% at 50% 50%,
+                  rgba(22, 34, 42, 0.18) 0%,
+                  rgba(58, 96, 115, 0.51) 100%);
 }
 
 .gradient_container{
