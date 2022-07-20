@@ -1,14 +1,11 @@
-import {React, useEffect, useState} from 'react';
-// import s from './App.module.scss';
-import { Route, Routes } from "react-router-dom";
-import MainScreen from "./screens/mainScreen/mainScreen";
-import SideBar from "./components/sideBar/sideBar";
-import Profile from "./screens/profileScreen/profile";
+import { React, useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import MainScreen from './screens/mainScreen/mainScreen';
+import SideBar from './components/sideBar/sideBar';
+import Profile from './screens/profileScreen/profile';
 
-
-function App() {
-  const [movieList, setMovieList] = useState([])
-  const limit = 20;
+const App = () => {
+  const [movieList, setMovieList] = useState([]);
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
 
   const getMovieList = () => {
@@ -17,24 +14,24 @@ function App() {
       .then((response) => {
         setMovieList(response.results);
       });
-  }
+  };
 
   useEffect(() => {
-    getMovieList()
-  }, [])
+    getMovieList();
+  }, []);
 
   const getModalState = (func) => {
-    setIsSideBarOpen(func)
-  }
+    setIsSideBarOpen(func);
+  };
 
-  console.log(isSideBarOpen);
+  console.log(1);
 
   return (
     <div>
       <SideBar getModalState={getModalState} />
       <Routes>
-        <Route path="/" element={ <MainScreen movieList={movieList} isSideBarOpen={isSideBarOpen} /> }/>
-        <Route path="/profile" element={ <Profile /> } />
+        <Route path="/" element={<MainScreen movieList={movieList} isSideBarOpen={isSideBarOpen} />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );
